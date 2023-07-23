@@ -29,6 +29,7 @@ export default function IndexPage() {
             width={320}
             height={168}
             className="mx-auto"
+            priority
           />
           <h3 className="text-2xl font-bold text-center py-3 underline">
             US Dollar savings accounts

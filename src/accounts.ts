@@ -231,11 +231,117 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 1,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.81,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: 'Money is kept in a fund holding government-backed short-term loans. For more information, see https://wise.com/help/articles/GDxZxemd21yDVP4TQmdDJ/using-wise-interest.',
     url: 'https://wise.com/gb/interest/'
   },
+  {
+    name: 'USD Personal Access',
+    institutionSlug: 'skipton-international',
+    marketingInstitutionSlug: 'skipton-international',
+    currencyCode: 'USD',
+    accountType: AccountType.INSTANT_ACCESS,
+    interestRates: [{
+      minimumDepositAmount: 50_000,
+      maximumDepositAmount: 5_000_000,
+      grossAnnualRatePercentage: 4,
+      termInDays: null
+    }],
+    notesText: null,
+    url: 'https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/access/'
+  },
+  {
+    name: 'USD Personal 40',
+    institutionSlug: 'skipton-international',
+    marketingInstitutionSlug: 'skipton-international',
+    currencyCode: 'USD',
+    accountType: AccountType.NOTICE,
+    interestRates: [{
+      minimumDepositAmount: 50_000,
+      maximumDepositAmount: 5_000_000,
+      grossAnnualRatePercentage: 4.25,
+      termInDays: 40
+    }],
+    notesText: null,
+    url: 'https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/40day/'
+  },
+  {
+    name: 'USD Personal 120',
+    institutionSlug: 'skipton-international',
+    marketingInstitutionSlug: 'skipton-international',
+    currencyCode: 'USD',
+    accountType: AccountType.NOTICE,
+    interestRates: [{
+      minimumDepositAmount: 50_000,
+      maximumDepositAmount: 5_000_000,
+      grossAnnualRatePercentage: 4.5,
+      termInDays: 120
+    }],
+    notesText: null,
+    url: 'https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/120day/'
+  },
+  {
+    name: '90 Day Notice Account',
+    institutionSlug: 'moneycorp-bank',
+    marketingInstitutionSlug: 'moneycorp-bank',
+    currencyCode: 'USD',
+    accountType: AccountType.NOTICE,
+    interestRates: [{
+      minimumDepositAmount: 100_000,
+      maximumDepositAmount: null,
+      grossAnnualRatePercentage: 3.6,
+      termInDays: 90
+    }],
+    notesText: null,
+    url: 'https://www.moneycorpbank.com/saving-account/'
+  },
+  {
+    name: 'Notice Account',
+    institutionSlug: 'santander-international',
+    marketingInstitutionSlug: 'santander-international',
+    currencyCode: 'USD',
+    accountType: AccountType.NOTICE,
+    interestRates: [{
+      minimumDepositAmount: 25_000,
+      maximumDepositAmount: 74_999,
+      grossAnnualRatePercentage: 0.1,
+      termInDays: 31
+    },
+    {
+      minimumDepositAmount: 75_000,
+      maximumDepositAmount: 999_999,
+      grossAnnualRatePercentage: 1.65,
+      termInDays: 31
+    },
+  {
+      minimumDepositAmount: 1_000_000,
+      maximumDepositAmount: null,
+      grossAnnualRatePercentage: 1.8,
+      termInDays: 31
+    },
+  {
+      minimumDepositAmount: 25_000,
+      maximumDepositAmount: 74_999,
+      grossAnnualRatePercentage: 0.1,
+      termInDays: 95
+    },
+    {
+      minimumDepositAmount: 75_000,
+      maximumDepositAmount: 999_999,
+      grossAnnualRatePercentage: 2,
+      termInDays: 95
+    },
+  {
+      minimumDepositAmount: 1_000_000,
+      maximumDepositAmount: null,
+      grossAnnualRatePercentage: 2.1,
+      termInDays: 95
+  }
+     ],
+    notesText: null,
+    url: 'https://www.santanderinternational.co.uk/international/products/savings/notice-account/'
+  }
 ];
 
 export const getAccounts = (): AccountWithInstitutions[] => {

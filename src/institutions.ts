@@ -3,6 +3,9 @@ import hsbcExpatLogo from './../public/hsbc-expat.svg';
 import revolutLogo from './../public/revolut.svg';
 import investecLogo from './../public/investec.svg';
 import wiseLogo from './../public/wise.svg';
+import skiptonLogo from './../public/skipton.webp';
+import moneycorpBankLogo from './../public/moneycorp-bank.svg';
+import santanderInternationalLogo from './../public/santander-international.svg';
 
 export interface Institution {
   name: string;
@@ -59,6 +62,36 @@ const INSTITUTIONS: Institution[] = [
     legalEntityName: 'Wise Payments Limited',
     includesDepositProtection: false,
     notesText: null
+  },
+  {
+    name: 'Skipton International',
+    websiteUrl: 'https://www.skiptoninternational.com/',
+    logoImage: skiptonLogo,
+    slug: 'skipton-international',
+    countryCode: 'GG',
+    legalEntityName: 'Skipton International Limited',
+    includesDepositProtection: true,
+    notesText: 'Customers new to Skipton International must maintain a minimum overall balance across all accounts of at least $50,000.'
+  },
+  {
+    name: 'Moneycorp Bank',
+    websiteUrl: 'https://www.moneycorpbank.com/',
+    logoImage: moneycorpBankLogo,
+    slug: 'moneycorp-bank',
+    countryCode: 'GG',
+    legalEntityName: 'Moneycorp Bank Limited',
+    includesDepositProtection: true,
+    notesText: null
+  },
+  {
+    name: 'Santander International',
+    websiteUrl: 'https://www.santanderinternational.co.uk/',
+    logoImage: santanderInternationalLogo,
+    slug: 'santander-international',
+    countryCode: 'JE',
+    legalEntityName: 'Santander Financial Services plc, Jersey Branch',
+    includesDepositProtection: true,
+    notesText: 'Customers must maintain a minimum balance across all accounts of £75,000 (or currency equivalent).'
   }
 ];
 

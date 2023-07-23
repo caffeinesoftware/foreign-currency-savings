@@ -26,6 +26,15 @@ const DEPOSIT_PROTECTION_SCHEMES: DepositProtectionScheme[] = [
     websiteUrl: 'https://www.fscs.org.uk/',
     coverageAmount: 85000,
     coverageCurrency: 'GBP'
+  },
+  {
+    name: 'Guernsey Banking Deposit Compensation Scheme',
+    countryCode: 'GG',
+    countryName: 'Guernsey',
+    countryEmoji: '🇬🇬',
+    websiteUrl: 'https://www.dcs.gg/',
+    coverageAmount: 50000,
+    coverageCurrency: 'GBP'
   }
 ];
 

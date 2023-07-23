@@ -30,24 +30,26 @@ const presentAccountType = (offer: Offer): string => {
       return 'Instant access';
     case AccountType.FIXED_TERM:
       return presentFixedTerm(offer);
+    case AccountType.NOTICE:
+      return `${offer.interestRate.termInDays} days notice`;
     default:
       throw 'Unrecognised account type';
   }
 };
 
 const presentFixedTerm = (offer: Offer): string => {
-  const fixedTermLengthInDays = offer.interestRate.fixedTermLengthInDays as number;
+  const fixedTermLengthInDays = offer.interestRate.termInDays as number;
 
   if (fixedTermLengthInDays % 365 === 0) {
     const fixedTermLengthInYears = fixedTermLengthInDays / 365;
     
     if (fixedTermLengthInYears === 1) {
-      return '1 year';
+      return '1 year fixed term';
     } else {
-      return `${fixedTermLengthInYears} years`;
+      return `${fixedTermLengthInYears} years fixed term`;
     }
   } else {
-    return `${fixedTermLengthInDays} days`;
+    return `${fixedTermLengthInDays} days fixed term`;
   }
 };
 
@@ -67,7 +69,7 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
           <span className="font-bold">{offer.interestRate.grossAnnualRatePercentage.toFixed(2)}%</span>
         </div>
         <div className="h-full lg:inline-block p-3 lg:border-r border-r-slate-800">
-          <span>Term<br /></span>
+          <span>Type<br /></span>
           <span className="font-bold">{presentAccountType(offer)}</span>
         </div>
         <div className="lg:inline-block p-3 lg:border-r border-r-slate-800">

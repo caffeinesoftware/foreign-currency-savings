@@ -15,7 +15,7 @@ export interface InterestRate {
   minimumDepositAmount: number;
   maximumDepositAmount: number | null;
   grossAnnualRatePercentage: number;
-  fixedTermLengthInDays: number | null
+  termInDays: number | null
 }
 
 export interface AccountWithInstitutions extends Account {
@@ -26,6 +26,7 @@ export interface AccountWithInstitutions extends Account {
 export enum AccountType {
   FIXED_TERM = 'fixed_term',
   INSTANT_ACCESS = 'instant_access',
+  NOTICE = 'notice'
 };
 
 const ACCOUNTS: Account[] = [
@@ -39,7 +40,7 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 1.05,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/saver-account'
@@ -54,7 +55,7 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 2.67,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/'
@@ -69,7 +70,7 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 2.72,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/'
@@ -84,7 +85,7 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 2.77,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/'
@@ -99,7 +100,7 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 2.82,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/'
@@ -114,36 +115,36 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 3.59,
-      fixedTermLengthInDays: 30
+      termInDays: 30
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.42,
-      fixedTermLengthInDays: 90
+      termInDays: 90
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.48,
-      fixedTermLengthInDays: 180
+      termInDays: 180
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.68,
-      fixedTermLengthInDays: 365
+      termInDays: 365
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: 24999,
       grossAnnualRatePercentage: 3.59,
-      fixedTermLengthInDays: 365
+      termInDays: 365
     }, {
       minimumDepositAmount: 25000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 3.64,
-      fixedTermLengthInDays: 365
+      termInDays: 365
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/fixed-term-deposit/'
@@ -158,49 +159,49 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 5000,
       maximumDepositAmount: 24999,
       grossAnnualRatePercentage: 3.59,
-      fixedTermLengthInDays: 30
+      termInDays: 30
     },
     {
       minimumDepositAmount: 25000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 3.64,
-      fixedTermLengthInDays: 30
+      termInDays: 30
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: 24999,
       grossAnnualRatePercentage: 4.42,
-      fixedTermLengthInDays: 90
+      termInDays: 90
     },
     {
       minimumDepositAmount: 25000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.47,
-      fixedTermLengthInDays: 90
+      termInDays: 90
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: 24999,
       grossAnnualRatePercentage: 4.48,
-      fixedTermLengthInDays: 180
+      termInDays: 180
     },
     {
       minimumDepositAmount: 25000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.53,
-      fixedTermLengthInDays: 180
+      termInDays: 180
     },
     {
       minimumDepositAmount: 5000,
       maximumDepositAmount: 24999,
       grossAnnualRatePercentage: 4.68,
-      fixedTermLengthInDays: 365
+      termInDays: 365
     },
     {
       minimumDepositAmount: 25000,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 4.73,
-      fixedTermLengthInDays: 365
+      termInDays: 365
     }],
     notesText: null,
     url: 'https://www.expat.hsbc.com/savings-accounts/products/fixed-term-deposit/'
@@ -215,7 +216,7 @@ const ACCOUNTS: Account[] = [
       minimumDepositAmount: 1,
       maximumDepositAmount: null,
       grossAnnualRatePercentage: 1.49,
-      fixedTermLengthInDays: null
+      termInDays: null
     }],
     notesText: null,
     url: 'https://www.revolut.com/meet-your-financial-goals-with-vaults/'

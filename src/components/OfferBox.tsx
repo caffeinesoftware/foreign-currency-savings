@@ -183,7 +183,9 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
       </div>
 
       <div className="py-4 text-sm text-gray-500">
-        <Linkify options={{ attributes: { className: "underline break-words" } }}>
+        <Linkify
+          options={{ attributes: { className: "underline break-words" } }}
+        >
           {offer.account.marketingInstitution.slug !==
             offer.account.institution.slug &&
             `Deposits held by ${offer.account.institution.legalEntityName} on behalf of ${offer.account.marketingInstitution.name}. `}

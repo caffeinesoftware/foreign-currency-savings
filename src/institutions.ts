@@ -12,6 +12,7 @@ export interface Institution {
   countryCode: string;
   legalEntityName: string;
   includesDepositProtection: boolean;
+  notesText: string | null;
 };
 
 export interface InstitutionWithDepositProtectionScheme extends Institution {
@@ -26,7 +27,8 @@ const INSTITUTIONS: Institution[] = [
     slug: 'hsbc-expat',
     countryCode: 'JE',
     legalEntityName: 'HSBC Bank plc, Jersey branch',
-    includesDepositProtection: true
+    includesDepositProtection: true,
+    notesText: 'Only available to HSBC Expat customers with an HSBC Expat Bank Account. To join HSBC Expat, you must either (a) save or invest at least £50,000 (or currency equivalent) with HSBC Expat, (b) have a salary of at least £100,000 (or currency equivalent) or (c) already be an HSBC Premier customer.'
   },
   {
     name: 'Revolut',
@@ -35,7 +37,8 @@ const INSTITUTIONS: Institution[] = [
     slug: 'revolut',
     countryCode: 'GB',
     legalEntityName: 'Revolut Ltd',
-    includesDepositProtection: true
+    includesDepositProtection: true,
+    notesText: null
   },
   {
     name: 'Investec',
@@ -44,7 +47,8 @@ const INSTITUTIONS: Institution[] = [
     slug: 'investec',
     countryCode: 'GB',
     legalEntityName: 'Investec Bank plc',
-    includesDepositProtection: true
+    includesDepositProtection: true,
+    notesText: null
   },
   {
     name: 'Wise',
@@ -53,7 +57,8 @@ const INSTITUTIONS: Institution[] = [
     slug: 'wise',
     countryCode: 'GB',
     legalEntityName: 'Wise Payments Limited',
-    includesDepositProtection: false
+    includesDepositProtection: false,
+    notesText: null
   }
 ];
 

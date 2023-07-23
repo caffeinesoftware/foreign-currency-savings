@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import Linkify from "linkify-react";
 
 import { Offer } from "../offers";
 import infoIcon from './../../public/info-icon.svg';
@@ -52,8 +54,10 @@ const presentFixedTerm = (offer: Offer): string => {
 const OfferBox = ({ offer }: { offer: Offer }) => (
   <div className="min-w-full bg-white rounded py-4 px-3 my-5 shadow-sm">
     <div className="mb-3 p-3">
-      <Image src={offer.account.marketingInstitution.logoImage} alt={offer.account.marketingInstitution.name} width={100} height={50} className="inline-block" style={{marginRight: '0.5em'}} />
-      <h2 className="font-bold inline-block text-lg">{offer.account.marketingInstitution.name} {offer.account.name}</h2>
+      <Link href={offer.account.url}>
+        <Image src={offer.account.marketingInstitution.logoImage} alt={offer.account.marketingInstitution.name} width={100} height={50} className="inline-block" style={{marginRight: '0.5em'}} />
+        <h2 className="font-bold inline-block text-lg">{offer.account.marketingInstitution.name} {offer.account.name}</h2>
+      </Link>
     </div>
 
     <div className="px-3">
@@ -77,10 +81,10 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
         </div>
       </div>
 
-      <div className="py-2 text-sm text-gray-500">{(offer.account.marketingInstitution.slug !== offer.account.institution.slug) && `Deposits held by ${offer.account.institution.legalEntityName} on behalf of ${offer.account.marketingInstitution.name}. `}{offer.account.notesText}</div>
+      <div className="py-4 text-sm text-gray-500"><Linkify options={{attributes: { className: "underline"}}}>{(offer.account.marketingInstitution.slug !== offer.account.institution.slug) && `Deposits held by ${offer.account.institution.legalEntityName} on behalf of ${offer.account.marketingInstitution.name}. `}{offer.account.institution.notesText} {offer.account.notesText}</Linkify></div>
 
-      {/* <div className="rounded bg-green-600 text-white p-2 my-3 inline-block float-right">Learn more</div>
-      <div className="clear-both"></div> */}
+      <Link href={offer.account.url}><div className="rounded bg-green-600 text-white p-2 my-3 inline-block float-right">Learn more</div></Link>
+      <div className="clear-both"></div>
     </div>
   </div>
 );

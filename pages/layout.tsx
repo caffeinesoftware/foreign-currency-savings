@@ -20,8 +20,8 @@ export default function Layout({
       </div>
       {children}
       <Tooltip id="tooltip"></Tooltip>
-      <div className="width-full bg-green-700 p-4 text-white fixed bottom-0">
-        Site operated by Caffeine Software Ltd, a company registered in England (no. 13992145) at Unit 24, Highcroft Industrial Estate, Enterprise Road, Horndean, Waterlooville, PO8 0BT, United Kingdom. Got any questions or feedback or spotted an error? Email <a href="mailto:me@timrogers.co.uk" className="underline">me@timrogers.co.uk</a>. Registered with the Information Commissioner&apos;s Office (no. C1121380).
+      <div className="w-full bg-green-700 p-4 text-white tall:fixed tall:bottom-0">
+        Site operated by <a href="https://caffeinesoftware.com">Caffeine Software Ltd</a>, a company registered in England (no. 13992145). Got any questions or feedback or spotted an error? Email <a href="mailto:me@timrogers.co.uk" className="underline">me@timrogers.co.uk</a>.
       </div>
     </>
   )

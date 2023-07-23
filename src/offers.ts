@@ -1,4 +1,5 @@
 import { AccountWithInstitutions, InterestRate, getAccountsByAccountTypeAndCurrency, getAccountsByCurrency, AccountType } from "./accounts";
+import { sortBy } from "./utils";
 
 export interface Offer {
   account: AccountWithInstitutions;
@@ -8,17 +9,21 @@ export interface Offer {
 export const getOffersByCurrency = (currencyCode: string): Offer[] => {
   const accounts = getAccountsByCurrency(currencyCode);
 
-  return accounts.flatMap(account => account.interestRates.map(interestRate => ({
+  const offers = accounts.flatMap(account => account.interestRates.map(interestRate => ({
     account,
     interestRate
   })));
+
+  return sortBy<Offer>(offers, offer => offer.interestRate.grossAnnualRatePercentage);
 };
 
 export const getOffersByAccountTypeAndCurrency = (accountType: AccountType, currencyCode: string): Offer[] => {
   const accounts = getAccountsByAccountTypeAndCurrency(accountType, currencyCode);
 
-  return accounts.flatMap(account => account.interestRates.map(interestRate => ({
+  const offers = accounts.flatMap(account => account.interestRates.map(interestRate => ({
     account,
     interestRate
   })));
+
+  return sortBy<Offer>(offers, offer => offer.interestRate.grossAnnualRatePercentage);
 };

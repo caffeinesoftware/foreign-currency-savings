@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { getOffersByCurrency, Offer } from '@/src/offers';
 import OfferBox from '@/src/components/OfferBox';
 import Layout from './layout';
+import USDAccountTypesMenu from '@/src/components/USDAccountTypesMenu';
 
 interface IPageProps {
   offers: Offer[];
@@ -21,11 +22,7 @@ export default function Currency({ offers }: IPageProps) {
           US Dollar savings accounts available to UK residents 🇺🇸
         </h2>
       </div>
-      <div className="width-full bg-green-500 columns-3 text-center text-white">
-        <Link href="/usd-savings-accounts" className="p-3 hover:bg-green-600 active:bg-green-700 block">All</Link>
-        <Link href="/usd-savings-accounts/instant-access" className="p-3 hover:bg-green-600 active:bg-green-700 block">Instant access</Link>
-        <Link href="/usd-savings-accounts/fixed-rate" className="p-3 hover:bg-green-600 active:bg-green-700 block">Fixed rate</Link>
-      </div>
+      <USDAccountTypesMenu />
       <div className="container p-6 mx-auto">
         {offers.map((offer) => (
           <OfferBox offer={offer} key={offer.account.name} />

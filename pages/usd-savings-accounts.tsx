@@ -31,6 +31,7 @@ export default function Currency({ offers }: IPageProps) {
           <OfferBox offer={offer} key={offer.account.name} />
         ))}
       </div>
+      <div style={{ height: '200px' }}>&nbsp;</div>
     </Layout>
   );
 }

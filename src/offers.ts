@@ -14,7 +14,7 @@ export const getOffersByCurrency = (currencyCode: string): Offer[] => {
     interestRate
   })));
 
-  return sortBy<Offer>(offers, offer => offer.interestRate.grossAnnualRatePercentage);
+  return sortBy<Offer>(offers, offer => offer.interestRate.grossAnnualRatePercentage).reverse();
 };
 
 export const getOffersByAccountTypeAndCurrency = (accountType: AccountType, currencyCode: string): Offer[] => {
@@ -25,5 +25,5 @@ export const getOffersByAccountTypeAndCurrency = (accountType: AccountType, curr
     interestRate
   })));
 
-  return sortBy<Offer>(offers, offer => offer.interestRate.grossAnnualRatePercentage);
+  return sortBy<Offer>(offers, offer => offer.interestRate.grossAnnualRatePercentage).reverse();
 };

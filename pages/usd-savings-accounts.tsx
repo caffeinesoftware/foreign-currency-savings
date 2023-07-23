@@ -1,11 +1,11 @@
-import { GetStaticProps } from 'next'
-import Link from 'next/link';
-import Head from 'next/head';
+import { GetStaticProps } from "next";
+import Link from "next/link";
+import Head from "next/head";
 
-import { getOffersByCurrency, Offer } from '@/src/offers';
-import OfferBox from '@/src/components/OfferBox';
-import Layout from './layout';
-import USDAccountTypesMenu from '@/src/components/USDAccountTypesMenu';
+import { getOffersByCurrency, Offer } from "@/src/offers";
+import OfferBox from "@/src/components/OfferBox";
+import Layout from "./layout";
+import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
 
 interface IPageProps {
   offers: Offer[];
@@ -28,13 +28,13 @@ export default function Currency({ offers }: IPageProps) {
           <OfferBox offer={offer} key={offer.account.name} />
         ))}
       </div>
-      <div style={{ height: '200px' }}>&nbsp;</div>
+      <div style={{ height: "200px" }}>&nbsp;</div>
     </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const offers = getOffersByCurrency('USD');
- 
-  return { props: { offers } }
-}
+  const offers = getOffersByCurrency("USD");
+
+  return { props: { offers } };
+};

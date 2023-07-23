@@ -10,4 +10,4 @@ export const sortBy = <T>(arr: T[], callback: (item: T) => any): T[] => {
     }
     return 0;
   });
-}
+};

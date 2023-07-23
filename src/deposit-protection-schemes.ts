@@ -10,32 +10,39 @@ export interface DepositProtectionScheme {
 
 const DEPOSIT_PROTECTION_SCHEMES: DepositProtectionScheme[] = [
   {
-    name: 'Jersey Bank Depositors Compensation Scheme',
-    countryCode: 'JE',
-    countryName: 'Jersey',
-    countryEmoji: '🇯🇪',
-    websiteUrl: 'https://www.gov.je/Industry/Finance/DepositProtection/pages/overview.aspx',
+    name: "Jersey Bank Depositors Compensation Scheme",
+    countryCode: "JE",
+    countryName: "Jersey",
+    countryEmoji: "🇯🇪",
+    websiteUrl:
+      "https://www.gov.je/Industry/Finance/DepositProtection/pages/overview.aspx",
     coverageAmount: 50000,
-    coverageCurrency: 'GBP'
+    coverageCurrency: "GBP",
   },
   {
-    name: 'Financial Services Compensation Scheme (FSCS)',
-    countryCode: 'GB',
-    countryName: 'United Kingdom',
-    countryEmoji: '🇬🇧',
-    websiteUrl: 'https://www.fscs.org.uk/',
+    name: "Financial Services Compensation Scheme (FSCS)",
+    countryCode: "GB",
+    countryName: "United Kingdom",
+    countryEmoji: "🇬🇧",
+    websiteUrl: "https://www.fscs.org.uk/",
     coverageAmount: 85000,
-    coverageCurrency: 'GBP'
+    coverageCurrency: "GBP",
   },
   {
-    name: 'Guernsey Banking Deposit Compensation Scheme',
-    countryCode: 'GG',
-    countryName: 'Guernsey',
-    countryEmoji: '🇬🇬',
-    websiteUrl: 'https://www.dcs.gg/',
+    name: "Guernsey Banking Deposit Compensation Scheme",
+    countryCode: "GG",
+    countryName: "Guernsey",
+    countryEmoji: "🇬🇬",
+    websiteUrl: "https://www.dcs.gg/",
     coverageAmount: 50000,
-    coverageCurrency: 'GBP'
-  }
+    coverageCurrency: "GBP",
+  },
 ];
 
-export const getDepositProtectionSchemeByCountryCode = (countryCode: string): DepositProtectionScheme | undefined => DEPOSIT_PROTECTION_SCHEMES.find((depositProtectionScheme) => depositProtectionScheme.countryCode === countryCode);
+export const getDepositProtectionSchemeByCountryCode = (
+  countryCode: string,
+): DepositProtectionScheme | undefined =>
+  DEPOSIT_PROTECTION_SCHEMES.find(
+    (depositProtectionScheme) =>
+      depositProtectionScheme.countryCode === countryCode,
+  );

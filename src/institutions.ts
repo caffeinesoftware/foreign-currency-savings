@@ -1,11 +1,14 @@
-import { DepositProtectionScheme, getDepositProtectionSchemeByCountryCode } from './deposit-protection-schemes';
-import hsbcExpatLogo from './../public/hsbc-expat.svg';
-import revolutLogo from './../public/revolut.svg';
-import investecLogo from './../public/investec.svg';
-import wiseLogo from './../public/wise.svg';
-import skiptonLogo from './../public/skipton.webp';
-import moneycorpBankLogo from './../public/moneycorp-bank.svg';
-import santanderInternationalLogo from './../public/santander-international.svg';
+import {
+  DepositProtectionScheme,
+  getDepositProtectionSchemeByCountryCode,
+} from "./deposit-protection-schemes";
+import hsbcExpatLogo from "./../public/hsbc-expat.svg";
+import revolutLogo from "./../public/revolut.svg";
+import investecLogo from "./../public/investec.svg";
+import wiseLogo from "./../public/wise.svg";
+import skiptonLogo from "./../public/skipton.webp";
+import moneycorpBankLogo from "./../public/moneycorp-bank.svg";
+import santanderInternationalLogo from "./../public/santander-international.svg";
 
 export interface Institution {
   name: string;
@@ -16,98 +19,108 @@ export interface Institution {
   legalEntityName: string;
   includesDepositProtection: boolean;
   notesText: string | null;
-};
+}
 
 export interface InstitutionWithDepositProtectionScheme extends Institution {
   depositProtectionScheme: DepositProtectionScheme;
-};
+}
 
 const INSTITUTIONS: Institution[] = [
   {
-    name: 'HSBC Expat',
-    websiteUrl: 'https://www.expat.hsbc.com/',
+    name: "HSBC Expat",
+    websiteUrl: "https://www.expat.hsbc.com/",
     logoImage: hsbcExpatLogo,
-    slug: 'hsbc-expat',
-    countryCode: 'JE',
-    legalEntityName: 'HSBC Bank plc, Jersey branch',
+    slug: "hsbc-expat",
+    countryCode: "JE",
+    legalEntityName: "HSBC Bank plc, Jersey branch",
     includesDepositProtection: true,
-    notesText: 'Only available to HSBC Expat customers with an HSBC Expat Bank Account. To join HSBC Expat, you must either (a) save or invest at least £50,000 (or currency equivalent) with HSBC Expat, (b) have a salary of at least £100,000 (or currency equivalent) or (c) already be an HSBC Premier customer.'
+    notesText:
+      "Only available to HSBC Expat customers with an HSBC Expat Bank Account. To join HSBC Expat, you must either (a) save or invest at least £50,000 (or currency equivalent) with HSBC Expat, (b) have a salary of at least £100,000 (or currency equivalent) or (c) already be an HSBC Premier customer.",
   },
   {
-    name: 'Revolut',
-    websiteUrl: 'https://www.revolut.com/',
+    name: "Revolut",
+    websiteUrl: "https://www.revolut.com/",
     logoImage: revolutLogo,
-    slug: 'revolut',
-    countryCode: 'GB',
-    legalEntityName: 'Revolut Ltd',
+    slug: "revolut",
+    countryCode: "GB",
+    legalEntityName: "Revolut Ltd",
     includesDepositProtection: true,
-    notesText: null
+    notesText: null,
   },
   {
-    name: 'Investec',
-    websiteUrl: 'https://www.investec.com/',
+    name: "Investec",
+    websiteUrl: "https://www.investec.com/",
     logoImage: investecLogo,
-    slug: 'investec',
-    countryCode: 'GB',
-    legalEntityName: 'Investec Bank plc',
+    slug: "investec",
+    countryCode: "GB",
+    legalEntityName: "Investec Bank plc",
     includesDepositProtection: true,
-    notesText: null
+    notesText: null,
   },
   {
-    name: 'Wise',
-    websiteUrl: 'https://wise.com/',
+    name: "Wise",
+    websiteUrl: "https://wise.com/",
     logoImage: wiseLogo,
-    slug: 'wise',
-    countryCode: 'GB',
-    legalEntityName: 'Wise Payments Limited',
+    slug: "wise",
+    countryCode: "GB",
+    legalEntityName: "Wise Payments Limited",
     includesDepositProtection: false,
-    notesText: null
+    notesText: null,
   },
   {
-    name: 'Skipton International',
-    websiteUrl: 'https://www.skiptoninternational.com/',
+    name: "Skipton International",
+    websiteUrl: "https://www.skiptoninternational.com/",
     logoImage: skiptonLogo,
-    slug: 'skipton-international',
-    countryCode: 'GG',
-    legalEntityName: 'Skipton International Limited',
+    slug: "skipton-international",
+    countryCode: "GG",
+    legalEntityName: "Skipton International Limited",
     includesDepositProtection: true,
-    notesText: 'Customers new to Skipton International must maintain a minimum overall balance across all accounts of at least $50,000.'
+    notesText:
+      "Customers new to Skipton International must maintain a minimum overall balance across all accounts of at least $50,000.",
   },
   {
-    name: 'Moneycorp Bank',
-    websiteUrl: 'https://www.moneycorpbank.com/',
+    name: "Moneycorp Bank",
+    websiteUrl: "https://www.moneycorpbank.com/",
     logoImage: moneycorpBankLogo,
-    slug: 'moneycorp-bank',
-    countryCode: 'GG',
-    legalEntityName: 'Moneycorp Bank Limited',
+    slug: "moneycorp-bank",
+    countryCode: "GG",
+    legalEntityName: "Moneycorp Bank Limited",
     includesDepositProtection: true,
-    notesText: null
+    notesText: null,
   },
   {
-    name: 'Santander International',
-    websiteUrl: 'https://www.santanderinternational.co.uk/',
+    name: "Santander International",
+    websiteUrl: "https://www.santanderinternational.co.uk/",
     logoImage: santanderInternationalLogo,
-    slug: 'santander-international',
-    countryCode: 'JE',
-    legalEntityName: 'Santander Financial Services plc, Jersey Branch',
+    slug: "santander-international",
+    countryCode: "JE",
+    legalEntityName: "Santander Financial Services plc, Jersey Branch",
     includesDepositProtection: true,
-    notesText: 'Customers must maintain a minimum balance across all accounts of £75,000 (or currency equivalent).'
-  }
+    notesText:
+      "Customers must maintain a minimum balance across all accounts of £75,000 (or currency equivalent).",
+  },
 ];
 
-const INSTITUTIONS_WITH_DEPOSIT_PROTECTION_SCHEMES: InstitutionWithDepositProtectionScheme[] = INSTITUTIONS.map((institution) => {
-  const depositProtectionScheme = getDepositProtectionSchemeByCountryCode(institution.countryCode)
+const INSTITUTIONS_WITH_DEPOSIT_PROTECTION_SCHEMES: InstitutionWithDepositProtectionScheme[] =
+  INSTITUTIONS.map((institution) => {
+    const depositProtectionScheme = getDepositProtectionSchemeByCountryCode(
+      institution.countryCode,
+    );
 
-  if (!depositProtectionScheme) {
-    throw `No deposit protection scheme found for country code ${institution.countryCode}`;
-  }
+    if (!depositProtectionScheme) {
+      throw `No deposit protection scheme found for country code ${institution.countryCode}`;
+    }
 
-  return {
-    ...institution,
-    depositProtectionScheme
-  };
-});
+    return {
+      ...institution,
+      depositProtectionScheme,
+    };
+  });
 
-export const getInstitutionBySlug = (slug: string): InstitutionWithDepositProtectionScheme | undefined => {
-  return INSTITUTIONS_WITH_DEPOSIT_PROTECTION_SCHEMES.find((institution) => institution.slug === slug);
+export const getInstitutionBySlug = (
+  slug: string,
+): InstitutionWithDepositProtectionScheme | undefined => {
+  return INSTITUTIONS_WITH_DEPOSIT_PROTECTION_SCHEMES.find(
+    (institution) => institution.slug === slug,
+  );
 };

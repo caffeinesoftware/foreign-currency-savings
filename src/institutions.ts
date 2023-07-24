@@ -10,6 +10,7 @@ import skiptonInternationalLogo from "./../public/skipton-international.png";
 import moneycorpBankLogo from "./../public/moneycorp-bank.svg";
 import santanderInternationalLogo from "./../public/santander-international.svg";
 import lloydsBankInternationalLogo from "./../public/lloyds-bank-international.png";
+import beaLogo from './../public/bea.gif';
 
 export interface Institution {
   name: string;
@@ -107,6 +108,16 @@ const INSTITUTIONS: Institution[] = [
     slug: "lloyds-bank-international",
     countryCode: "IM",
     legalEntityName: "Lloyds Bank Corporate Markets plc, Isle of Man Branch",
+    includesDepositProtection: true,
+    notesText: null,
+  },
+  {
+    name: "BEA UK",
+    websiteUrl: "https://www.hkbea.co.uk/html/en/index.html",
+    logoImage: beaLogo,
+    slug: "bea",
+    countryCode: "GB",
+    legalEntityName: "The Bank of East Asia Limited",
     includesDepositProtection: true,
     notesText: null,
   },

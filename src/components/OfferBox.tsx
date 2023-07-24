@@ -137,10 +137,6 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
                   offer.account.institution.depositProtectionScheme.countryEmoji
                 }`}
                 data-tooltip-place="top"
-                href={
-                  offer.account.institution.depositProtectionScheme.websiteUrl
-                }
-                target="_blank"
               >
                 <Image
                   src={infoIcon}

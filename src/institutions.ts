@@ -10,7 +10,7 @@ import skiptonInternationalLogo from "./../public/skipton-international.png";
 import moneycorpBankLogo from "./../public/moneycorp-bank.svg";
 import santanderInternationalLogo from "./../public/santander-international.svg";
 import lloydsBankInternationalLogo from "./../public/lloyds-bank-international.png";
-import beaLogo from './../public/bea.gif';
+import beaLogo from "./../public/bea.gif";
 
 export interface Institution {
   name: string;

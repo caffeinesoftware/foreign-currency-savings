@@ -506,79 +506,79 @@ const ACCOUNTS: Account[] = [
     url: "https://www.lloydsbank.com/international/products-and-services/saving-accounts/bonus-saver.html",
   },
   {
-    name: 'Savings Account',
-    institutionSlug: 'bea',
-    marketingInstitutionSlug: 'bea',
-    currencyCode: 'USD',
+    name: "Savings Account",
+    institutionSlug: "bea",
+    marketingInstitutionSlug: "bea",
+    currencyCode: "USD",
     accountType: AccountType.INSTANT_ACCESS,
     interestRates: [
       {
         minimumDepositAmount: 10,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 2.02,
-        termInDays: null
-      }
+        termInDays: null,
+      },
     ],
     notesText: null,
-    url: 'https://www.hkbea.co.uk/html/en/beauk-personal-banking-savings-account.html'
+    url: "https://www.hkbea.co.uk/html/en/beauk-personal-banking-savings-account.html",
   },
   {
-    name: 'Call Deposit Account',
-    institutionSlug: 'bea',
-    marketingInstitutionSlug: 'bea',
-    currencyCode: 'USD',
+    name: "Call Deposit Account",
+    institutionSlug: "bea",
+    marketingInstitutionSlug: "bea",
+    currencyCode: "USD",
     accountType: AccountType.INSTANT_ACCESS,
     interestRates: [
       {
         minimumDepositAmount: 10,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 2.02,
-        termInDays: null
-      }
+        termInDays: null,
+      },
     ],
     notesText: null,
-    url: 'https://www.hkbea.co.uk/html/en/beauk-personal-banking-call-deposit-account.html'
+    url: "https://www.hkbea.co.uk/html/en/beauk-personal-banking-call-deposit-account.html",
   },
   {
-    name: 'Fixed Term Deposit Account',
-    institutionSlug: 'bea',
-    marketingInstitutionSlug: 'bea',
-    currencyCode: 'USD',
+    name: "Fixed Term Deposit Account",
+    institutionSlug: "bea",
+    marketingInstitutionSlug: "bea",
+    currencyCode: "USD",
     accountType: AccountType.FIXED_TERM,
     interestRates: [
       {
         minimumDepositAmount: 5_000,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 4,
-        termInDays: 30
+        termInDays: 30,
       },
       {
         minimumDepositAmount: 5_000,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 4.1,
-        termInDays: 60
+        termInDays: 60,
       },
       {
         minimumDepositAmount: 5_000,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 4.2,
-        termInDays: 90
+        termInDays: 90,
       },
       {
         minimumDepositAmount: 5_000,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 4.3,
-        termInDays: 180
+        termInDays: 180,
       },
       {
         minimumDepositAmount: 5_000,
         maximumDepositAmount: null,
         grossAnnualRatePercentage: 4.3,
-        termInDays: 365
-      }
+        termInDays: 365,
+      },
     ],
     notesText: null,
-    url: 'https://www.hkbea.co.uk/html/en/beauk-rates-usd-fixed-deposit-rates.html'
+    url: "https://www.hkbea.co.uk/html/en/beauk-rates-usd-fixed-deposit-rates.html",
   },
 ];
 

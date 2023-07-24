@@ -5,6 +5,7 @@ import Linkify from "linkify-react";
 import { Offer } from "../offers";
 import infoIcon from "./../../public/info-icon.svg";
 import { AccountType } from "../accounts";
+import { presentTerm } from "../utils";
 
 const getAmountDescription = (offer: Offer): string => {
   if (
@@ -53,27 +54,13 @@ const presentAccountType = (offer: Offer): string => {
     case AccountType.INSTANT_ACCESS:
       return "Instant access";
     case AccountType.FIXED_TERM:
-      return presentFixedTerm(offer);
+      return (
+        presentTerm(offer.interestRate.termInDays as number) + " fixed term"
+      );
     case AccountType.NOTICE:
       return `${offer.interestRate.termInDays} days notice`;
     default:
       throw "Unrecognised account type";
-  }
-};
-
-const presentFixedTerm = (offer: Offer): string => {
-  const fixedTermLengthInDays = offer.interestRate.termInDays as number;
-
-  if (fixedTermLengthInDays % 365 === 0) {
-    const fixedTermLengthInYears = fixedTermLengthInDays / 365;
-
-    if (fixedTermLengthInYears === 1) {
-      return "1 year fixed term";
-    } else {
-      return `${fixedTermLengthInYears} years fixed term`;
-    }
-  } else {
-    return `${fixedTermLengthInDays} days fixed term`;
   }
 };
 
@@ -122,7 +109,7 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
         </div>
         <div className="lg:inline-block p-3">
           <span>
-            Deposit Guarantee
+            Deposit Protection
             <br />
           </span>
           {offer.account.institution.includesDepositProtection && (
@@ -149,9 +136,11 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
                 } ${
                   offer.account.institution.depositProtectionScheme.countryEmoji
                 }`}
-                data-tooltip-place="top"
-                href={offer.account.institution.depositProtectionScheme.websiteUrl}
-                target='_blank'
+                data-tooltip-place="right"
+                href={
+                  offer.account.institution.depositProtectionScheme.websiteUrl
+                }
+                target="_blank"
               >
                 <Image
                   src={infoIcon}
@@ -169,7 +158,7 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
               <a
                 data-tooltip-id="tooltip"
                 data-tooltip-content={`Deposits with ${offer.account.institution.legalEntityName} are not protected by a deposit protection scheme`}
-                data-tooltip-place="top"
+                data-tooltip-place="right"
               >
                 <Image
                   src={infoIcon}

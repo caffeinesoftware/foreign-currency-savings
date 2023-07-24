@@ -18,7 +18,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Link>
       </div>
       {children}
-      <Tooltip id="tooltip"></Tooltip>
+      <Tooltip
+        id="tooltip"
+        style={{ maxWidth: "300px", whiteSpace: "pre-wrap" }}
+      ></Tooltip>
       <div className="w-full bg-green-700 p-4 text-white tall:fixed tall:bottom-0">
         Site operated by{" "}
         <a href="https://caffeinesoftware.com">Caffeine Software Ltd</a>, a

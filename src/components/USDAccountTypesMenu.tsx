@@ -10,7 +10,6 @@ const USDAccountTypesMenu = () => {
       ["py-3"]: true,
       "hover:bg-green-700": true,
       "border-b": true,
-      "active:bg-green-700": true,
       block: true,
       "bg-green-700": router.pathname === pathname,
     });

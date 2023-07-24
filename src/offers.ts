@@ -10,17 +10,23 @@ import { sortBy } from "./utils";
 export interface Offer {
   account: AccountWithInstitutions;
   interestRate: InterestRate;
+  key: string;
 }
 
 export const getOffersByCurrency = (currencyCode: string): Offer[] => {
   const accounts = getAccountsByCurrency(currencyCode);
 
-  const offers = accounts.flatMap((account) =>
-    account.interestRates.map((interestRate) => ({
-      account,
-      interestRate,
-    })),
-  );
+  const offers = accounts.flatMap((account) => {
+    return account.interestRates.map((interestRate) => {
+      const key = `${account.institution.slug}-${account.name}-${interestRate.minimumDepositAmount}-${interestRate.maximumDepositAmount}-${interestRate.termInDays}`;
+
+      return {
+        account,
+        interestRate,
+        key,
+      };
+    });
+  });
 
   return sortBy<Offer>(
     offers,
@@ -37,12 +43,17 @@ export const getOffersByAccountTypeAndCurrency = (
     currencyCode,
   );
 
-  const offers = accounts.flatMap((account) =>
-    account.interestRates.map((interestRate) => ({
-      account,
-      interestRate,
-    })),
-  );
+  const offers = accounts.flatMap((account) => {
+    return account.interestRates.map((interestRate) => {
+      const key = `${account.institution.slug}-${account.name}-${interestRate.minimumDepositAmount}-${interestRate.maximumDepositAmount}-${interestRate.termInDays}`;
+
+      return {
+        account,
+        interestRate,
+        key,
+      };
+    });
+  });
 
   return sortBy<Offer>(
     offers,

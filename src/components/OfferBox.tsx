@@ -173,6 +173,17 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
         </div>
       </div>
 
+      {offer.account.institution.slug === "hsbc-expat" && (
+        <div className="p-2 my-3 rounded border-purple-600 border-2">
+          <span className="font-bold">Offer:</span> Open your first account with
+          HSBC Expat and get a £250 signup bonus. For more details,{" "}
+          <a href="mailto:me@timrogers.co.uk" className="underline">
+            drop us an email
+          </a>
+          .
+        </div>
+      )}
+
       <div className="py-4 text-sm text-gray-500">
         <Linkify
           options={{ attributes: { className: "underline break-words" } }}

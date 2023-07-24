@@ -37,6 +37,16 @@ const DEPOSIT_PROTECTION_SCHEMES: DepositProtectionScheme[] = [
     coverageAmount: 50000,
     coverageCurrency: "GBP",
   },
+  {
+    name: "Isle of Man Depositors' Compensation Scheme",
+    countryCode: "IM",
+    countryName: "Isle of Man",
+    countryEmoji: "🇮🇲",
+    websiteUrl:
+      "https://www.iomfsa.im/consumer-material/isle-of-man-depositors-compensation-scheme-dcs/",
+    coverageAmount: 50000,
+    coverageCurrency: "GBP",
+  },
 ];
 
 export const getDepositProtectionSchemeByCountryCode = (

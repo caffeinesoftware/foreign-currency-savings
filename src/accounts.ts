@@ -374,6 +374,137 @@ const ACCOUNTS: Account[] = [
     notesText: null,
     url: "https://www.santanderinternational.co.uk/international/products/savings/notice-account/",
   },
+  {
+    name: "Fixed Term Deposit",
+    institutionSlug: "lloyds-bank-international",
+    marketingInstitutionSlug: "lloyds-bank-international",
+    currencyCode: "USD",
+    accountType: AccountType.FIXED_TERM,
+    interestRates: [
+      {
+        minimumDepositAmount: 10_000,
+        maximumDepositAmount: 49_999,
+        grossAnnualRatePercentage: 0.65,
+        termInDays: 31,
+      },
+      {
+        minimumDepositAmount: 50_000,
+        maximumDepositAmount: 249_999,
+        grossAnnualRatePercentage: 0.9,
+        termInDays: 31,
+      },
+      {
+        minimumDepositAmount: 250_000,
+        maximumDepositAmount: 499_999,
+        grossAnnualRatePercentage: 1.15,
+        termInDays: 31,
+      },
+      {
+        minimumDepositAmount: 500_000,
+        maximumDepositAmount: 999_999,
+        grossAnnualRatePercentage: 1.25,
+        termInDays: 31,
+      },
+      {
+        minimumDepositAmount: 1_000_000,
+        maximumDepositAmount: null,
+        grossAnnualRatePercentage: 1.5,
+        termInDays: 31,
+      },
+      {
+        minimumDepositAmount: 10_000,
+        maximumDepositAmount: 49_999,
+        grossAnnualRatePercentage: 0.75,
+        termInDays: 90,
+      },
+      {
+        minimumDepositAmount: 50_000,
+        maximumDepositAmount: 249_999,
+        grossAnnualRatePercentage: 2.65,
+        termInDays: 90,
+      },
+      {
+        minimumDepositAmount: 250_000,
+        maximumDepositAmount: 499_999,
+        grossAnnualRatePercentage: 3.1,
+        termInDays: 90,
+      },
+      {
+        minimumDepositAmount: 500_000,
+        maximumDepositAmount: 999_999,
+        grossAnnualRatePercentage: 3.2,
+        termInDays: 90,
+      },
+      {
+        minimumDepositAmount: 1_000_000,
+        maximumDepositAmount: null,
+        grossAnnualRatePercentage: 3.4,
+        termInDays: 90,
+      },
+      {
+        minimumDepositAmount: 10_000,
+        maximumDepositAmount: 49_999,
+        grossAnnualRatePercentage: 2.56,
+        termInDays: 180,
+      },
+      {
+        minimumDepositAmount: 50_000,
+        maximumDepositAmount: null,
+        grossAnnualRatePercentage: 4.5,
+        termInDays: 180,
+      },
+      {
+        minimumDepositAmount: 10_000,
+        maximumDepositAmount: 49_999,
+        grossAnnualRatePercentage: 3.6,
+        termInDays: 365,
+      },
+      {
+        minimumDepositAmount: 50_000,
+        maximumDepositAmount: null,
+        grossAnnualRatePercentage: 4.75,
+        termInDays: 365,
+      },
+    ],
+    notesText: null,
+    url: "https://www.lloydsbank.com/international/products-and-services/saving-accounts/fixed-term-deposits.html#dollar",
+  },
+  {
+    name: "International Bonus Saver Account",
+    institutionSlug: "lloyds-bank-international",
+    marketingInstitutionSlug: "lloyds-bank-international",
+    currencyCode: "USD",
+    accountType: AccountType.INSTANT_ACCESS,
+    interestRates: [
+      {
+        minimumDepositAmount: 1,
+        maximumDepositAmount: 99_999,
+        grossAnnualRatePercentage: 2.1,
+        termInDays: null,
+      },
+      {
+        minimumDepositAmount: 100_000,
+        maximumDepositAmount: 499_999,
+        grossAnnualRatePercentage: 2.3,
+        termInDays: null,
+      },
+      {
+        minimumDepositAmount: 500_000,
+        maximumDepositAmount: 999_999,
+        grossAnnualRatePercentage: 2.5,
+        termInDays: null,
+      },
+      {
+        minimumDepositAmount: 1_000_000,
+        maximumDepositAmount: null,
+        grossAnnualRatePercentage: 3.05,
+        termInDays: null,
+      },
+    ],
+    notesText:
+      "Interest rate includes a bonus of 1.5% for 12 months from the date of opening.",
+    url: "https://www.lloydsbank.com/international/products-and-services/saving-accounts/bonus-saver.html",
+  },
 ];
 
 export const getAccounts = (): AccountWithInstitutions[] => {

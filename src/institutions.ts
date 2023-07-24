@@ -9,6 +9,7 @@ import wiseLogo from "./../public/wise.svg";
 import skiptonLogo from "./../public/skipton.webp";
 import moneycorpBankLogo from "./../public/moneycorp-bank.svg";
 import santanderInternationalLogo from "./../public/santander-international.svg";
+import lloydsBankInternationalLogo from "./../public/lloyds-bank-international.png";
 
 export interface Institution {
   name: string;
@@ -98,6 +99,16 @@ const INSTITUTIONS: Institution[] = [
     includesDepositProtection: true,
     notesText:
       "Customers must maintain a minimum balance across all accounts of £75,000 (or currency equivalent).",
+  },
+  {
+    name: "Lloyds Bank International",
+    websiteUrl: "https://www.lloydsbank.com/international",
+    logoImage: lloydsBankInternationalLogo,
+    slug: "lloyds-bank-international",
+    countryCode: "IM",
+    legalEntityName: "Lloyds Bank Corporate Markets plc, Isle of Man Branch",
+    includesDepositProtection: true,
+    notesText: null,
   },
 ];
 

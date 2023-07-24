@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
-import Link from "next/link";
 import Head from "next/head";
+import { useState } from "react";
 
 import { getOffersByCurrency, Offer } from "@/src/offers";
 import OfferBox from "@/src/components/OfferBox";
@@ -12,6 +12,19 @@ interface IPageProps {
 }
 
 export default function Currency({ offers }: IPageProps) {
+  const [initialDeposit, setInitialDeposit] = useState<number | null>(null);
+
+  const filteredOffers = offers.filter((offer) => {
+    if (!initialDeposit) return offer;
+    return offer.interestRate.minimumDepositAmount <= initialDeposit;
+  });
+
+  const onChangeInitialDeposit = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setInitialDeposit(parseInt(event.target.value));
+  };
+
   return (
     <Layout>
       <Head>
@@ -23,9 +36,44 @@ export default function Currency({ offers }: IPageProps) {
         </h2>
       </div>
       <USDAccountTypesMenu />
+      <div className="w-full bg-green-600 p-3 md:flex">
+        <h3 className="text-white text-lg text-center font-bold py-2 uppercase">
+          Filters
+        </h3>
+
+        <label
+          htmlFor="initialDeposit"
+          className="text-white my-2 block md:ml-4"
+        >
+          Amount
+        </label>
+
+        <input
+          name="initialDeposit"
+          className="block my-2 w-full text-lg ld:float-left md:ml-4 md:grow pl-5"
+          onChange={onChangeInitialDeposit}
+          type="number"
+          min="1"
+          step="1"
+          placeholder="Any"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='85px'><text x='2' y='13' fill='gray' font-size='12' font-family='arial'>$</text></svg>",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "5px 2px",
+            backgroundSize: "auto 75%",
+          }}
+        />
+
+        <div className="clear-both"></div>
+      </div>
       <div className="container p-6 mx-auto">
-        {offers.map((offer) => (
-          <OfferBox offer={offer} key={offer.account.name} />
+        <p className="text-center text-md mt-1 text-gray-600">
+          Displaying {filteredOffers.length} of {offers.length} results
+        </p>
+
+        {filteredOffers.map((offer) => (
+          <OfferBox offer={offer} key={offer.key} />
         ))}
       </div>
       <div style={{ height: "200px" }}>&nbsp;</div>

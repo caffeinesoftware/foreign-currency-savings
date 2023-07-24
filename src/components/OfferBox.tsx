@@ -136,7 +136,7 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
                 } ${
                   offer.account.institution.depositProtectionScheme.countryEmoji
                 }`}
-                data-tooltip-place="right"
+                data-tooltip-place="top"
                 href={
                   offer.account.institution.depositProtectionScheme.websiteUrl
                 }
@@ -158,7 +158,7 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
               <a
                 data-tooltip-id="tooltip"
                 data-tooltip-content={`Deposits with ${offer.account.institution.legalEntityName} are not protected by a deposit protection scheme`}
-                data-tooltip-place="right"
+                data-tooltip-place="top"
               >
                 <Image
                   src={infoIcon}

@@ -1,13 +1,17 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 import { getOffersByAccountTypeAndCurrency, Offer } from "@/src/offers";
 import { AccountType } from "@/src/accounts";
-import OfferBox from "@/src/components/OfferBox";
 import Layout from "./../layout";
 import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
-import { presentTerm } from "@/src/utils";
+import OfferList from "@/src/components/OfferList";
+import AmountFilter from "@/src/components/AmountFilter";
+import TermFilter from "@/src/components/TermFilter";
+import { dropBlankValues } from "@/src/utils";
 
 interface IPageProps {
   offers: Offer[];
@@ -15,8 +19,26 @@ interface IPageProps {
 }
 
 export default function Currency({ offers, termOptions }: IPageProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const initialDepositFromQueryString = searchParams?.get("initial_deposit");
+  const termFromQueryString = searchParams?.get("term");
+
   const [term, setTerm] = useState<number | null>(null);
   const [initialDeposit, setInitialDeposit] = useState<number | null>(null);
+
+  useEffect(() => {
+    setInitialDeposit(
+      initialDepositFromQueryString
+        ? parseInt(initialDepositFromQueryString)
+        : null,
+    );
+  }, [initialDepositFromQueryString]);
+
+  useEffect(() => {
+    setTerm(termFromQueryString ? parseInt(termFromQueryString) : null);
+  }, [termFromQueryString]);
 
   const filteredOffers = offers
     .filter((offer) => {
@@ -30,13 +52,24 @@ export default function Currency({ offers, termOptions }: IPageProps) {
     });
 
   const onChangeTerm = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setTerm(parseInt(event.target.value));
+    const term = event.target.value === "All" ? null : event.target.value;
+
+    router.push({
+      pathname: router.pathname,
+      query: dropBlankValues({ ...router.query, term }),
+    });
   };
 
   const onChangeInitialDeposit = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    setInitialDeposit(parseInt(event.target.value));
+    router.push({
+      pathname: router.pathname,
+      query: dropBlankValues({
+        ...router.query,
+        initial_deposit: event.target.value,
+      }),
+    });
   };
 
   return (
@@ -55,57 +88,26 @@ export default function Currency({ offers, termOptions }: IPageProps) {
           Filters
         </h3>
 
-        <label htmlFor="term" className="text-white my-2 block md:ml-4">
-          Term
-        </label>
-
-        <select
+        <TermFilter
+          availableTerms={termOptions}
+          label="Term"
           name="term"
-          className="block my-2 w-full text-lg md:float-left md:ml-4 md:grow"
           onChange={onChangeTerm}
-        >
-          <option>All</option>
-          {termOptions.map((term) => (
-            <option key={term} value={term}>
-              {presentTerm(term)}
-            </option>
-          ))}
-        </select>
+          value={term}
+        />
 
-        <label
-          htmlFor="initialDeposit"
-          className="text-white my-2 block md:ml-4"
-        >
-          Amount
-        </label>
-
-        <input
-          name="initialDeposit"
-          className="block my-2 w-full text-lg ld:float-left md:ml-4 md:grow pl-5"
+        <AmountFilter
           onChange={onChangeInitialDeposit}
-          type="number"
-          min="1"
-          step="1"
-          placeholder="Any"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='85px'><text x='2' y='13' fill='gray' font-size='12' font-family='arial'>$</text></svg>",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "5px 2px",
-            backgroundSize: "auto 75%",
-          }}
+          value={initialDeposit}
         />
 
         <div className="clear-both"></div>
       </div>
       <div className="container p-6 mx-auto">
-        <p className="text-center text-md mt-1 text-gray-600">
-          Displaying {filteredOffers.length} of {offers.length} results
-        </p>
-
-        {filteredOffers.map((offer) => (
-          <OfferBox offer={offer} key={offer.key} />
-        ))}
+        <div className="container p-6 mx-auto">
+          <OfferList offers={filteredOffers} totalCount={offers.length} />
+          <div style={{ height: "200px" }}>&nbsp;</div>
+        </div>
       </div>
     </Layout>
   );

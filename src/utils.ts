@@ -25,3 +25,13 @@ export const presentTerm = (termInDays: number): string => {
     return `${termInDays} days`;
   }
 };
+
+export const dropBlankValues = (obj: {
+  [key: string]: any;
+}): { [key: string]: any } => {
+  return Object.fromEntries(
+    Object.entries(obj).filter(
+      ([_, v]) => v != null && v != undefined && v != "",
+    ),
+  );
+};

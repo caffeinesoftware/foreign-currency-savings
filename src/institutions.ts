@@ -11,6 +11,11 @@ import moneycorpBankLogo from "./../public/moneycorp-bank.svg";
 import santanderInternationalLogo from "./../public/santander-international.svg";
 import lloydsBankInternationalLogo from "./../public/lloyds-bank-international.png";
 import beaLogo from "./../public/bea.gif";
+import pnbLogo from "./../public/pnb.png";
+import sbiLogo from "./../public/sbi.png";
+import unionBankOfIndiaUkLogo from "./../public/union-bank-of-india-uk.png";
+import ublUkLogo from "./../public/ubl-uk.png";
+import bankOfChinaLogo from "./../public/bank-of-china.gif";
 
 export interface Institution {
   name: string;
@@ -118,6 +123,56 @@ const INSTITUTIONS: Institution[] = [
     slug: "bea",
     countryCode: "GB",
     legalEntityName: "The Bank of East Asia Limited",
+    includesDepositProtection: true,
+    notesText: null,
+  },
+  {
+    name: "Punjab National Bank International",
+    websiteUrl: "https://pnbint.com",
+    logoImage: pnbLogo,
+    slug: "pnb",
+    countryCode: "GB",
+    legalEntityName: "Punjab National Bank (International) Limited",
+    includesDepositProtection: true,
+    notesText: null,
+  },
+  {
+    name: "SBI UK",
+    websiteUrl: "https://sbiuk.statebank",
+    logoImage: sbiLogo,
+    slug: "sbi-uk",
+    countryCode: "GB",
+    legalEntityName: "State Bank Of India (UK) Limited",
+    includesDepositProtection: true,
+    notesText: null,
+  },
+  {
+    name: "Union Bank of India UK",
+    websiteUrl: "https://unionbankofindiauk.co.uk",
+    logoImage: unionBankOfIndiaUkLogo,
+    slug: "union-bank-of-india-uk",
+    countryCode: "GB",
+    legalEntityName: "Union Bank Of India (UK) Limited",
+    includesDepositProtection: true,
+    notesText: null,
+  },
+  {
+    name: "UBL UK",
+    websiteUrl: "https://ubluk.com",
+    logoImage: ublUkLogo,
+    slug: "ubl-uk",
+    countryCode: "GB",
+    legalEntityName: "United National Bank Limited",
+    includesDepositProtection: true,
+    notesText: null,
+  },
+  {
+    name: "Bank of China UK",
+    websiteUrl: "https://bankofchina.com/uk",
+    logoImage: bankOfChinaLogo,
+    slug: "bank-of-china-uk",
+    countryCode: "GB",
+    legalEntityName: "Bank of China (UK) Limited",
     includesDepositProtection: true,
     notesText: null,
   },

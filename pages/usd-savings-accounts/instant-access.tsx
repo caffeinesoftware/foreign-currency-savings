@@ -8,6 +8,7 @@ import { AccountType } from "@/src/accounts";
 import OfferBox from "@/src/components/OfferBox";
 import Layout from "./../layout";
 import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
+import OfferList from "@/src/components/OfferList";
 
 interface IPageProps {
   offers: Offer[];
@@ -73,13 +74,10 @@ export default function Currency({ offers }: IPageProps) {
         <div className="clear-both"></div>
       </div>
       <div className="container p-5 mx-auto">
-        <p className="text-center text-md mt-1 text-gray-600">
-          Displaying {filteredOffers.length} of {offers.length} results
-        </p>
-
-        {filteredOffers.map((offer) => (
-          <OfferBox offer={offer} key={offer.key} />
-        ))}
+        <div className="container p-6 mx-auto">
+          <OfferList offers={filteredOffers} totalCount={offers.length} />
+          <div style={{ height: "200px" }}>&nbsp;</div>
+        </div>
       </div>
     </Layout>
   );

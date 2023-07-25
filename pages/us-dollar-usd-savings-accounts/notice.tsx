@@ -82,11 +82,12 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
   return (
     <Layout>
       <Head>
-        <title>US Dollar notice savings accounts 🇺🇸</title>
+        <title>🇺🇸 US Dollar (USD) notice savings accounts</title>
+        <meta name="description" content="Compare US Dollar (USD) notice savings accounts available for UK residents" />
       </Head>
       <div className="width-full bg-green-600 p-3">
         <h2 className="text-white font-bold text-3xl text-center py-3">
-          US Dollar notice savings accounts available to UK residents 🇺🇸
+          US Dollar (USD) notice savings accounts available to UK residents
         </h2>
       </div>
       <USDAccountTypesMenu />

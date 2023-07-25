@@ -75,11 +75,12 @@ export default function Currency({ offers, termOptions }: IPageProps) {
   return (
     <Layout>
       <Head>
-        <title>US Dollar fixed rate savings accounts 🇺🇸</title>
+        <title>🇺🇸 US Dollar (USD) fixed rate savings accounts </title>
+        <meta name="description" content="Compare US Dollar (USD) fixed rate savings accounts available for UK residents" />
       </Head>
       <div className="width-full bg-green-600 p-3">
         <h2 className="text-white font-bold text-3xl text-center py-3">
-          US Dollar fixed rate savings accounts available to UK residents 🇺🇸
+          US Dollar (USD) fixed rate savings accounts available to UK residents
         </h2>
       </div>
       <USDAccountTypesMenu />

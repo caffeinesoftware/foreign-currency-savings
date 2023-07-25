@@ -10,6 +10,7 @@ import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
 import { presentTerm } from "@/src/utils";
 import OfferList from "@/src/components/OfferList";
 import AmountFilter from "@/src/components/AmountFilter";
+import TermFilter from "@/src/components/TermFilter";
 
 interface IPageProps {
   noticePeriodOptions: number[];
@@ -59,22 +60,13 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
           Filters
         </h3>
 
-        <label htmlFor="noticePeriod" className="text-white my-2 block md:ml-4">
-          Notice
-        </label>
-
-        <select
+        <TermFilter
+          availableTerms={noticePeriodOptions}
+          label="Notice"
           name="noticePeriod"
-          className="block my-2 w-full text-lg md:float-left md:ml-4 md:grow"
           onChange={onChangeNoticePeriod}
-        >
-          <option>All</option>
-          {noticePeriodOptions.map((noticePeriod) => (
-            <option key={noticePeriod} value={noticePeriod}>
-              {presentTerm(noticePeriod)}
-            </option>
-          ))}
-        </select>
+          value={noticePeriod}
+        />
 
         <AmountFilter
           onChange={onChangeInitialDeposit}

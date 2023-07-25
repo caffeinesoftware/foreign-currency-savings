@@ -10,6 +10,7 @@ import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
 import { presentTerm } from "@/src/utils";
 import OfferList from "@/src/components/OfferList";
 import AmountFilter from "@/src/components/AmountFilter";
+import TermFilter from "@/src/components/TermFilter";
 
 interface IPageProps {
   offers: Offer[];
@@ -57,22 +58,13 @@ export default function Currency({ offers, termOptions }: IPageProps) {
           Filters
         </h3>
 
-        <label htmlFor="term" className="text-white my-2 block md:ml-4">
-          Term
-        </label>
-
-        <select
+        <TermFilter
+          availableTerms={termOptions}
+          label="Term"
           name="term"
-          className="block my-2 w-full text-lg md:float-left md:ml-4 md:grow"
           onChange={onChangeTerm}
-        >
-          <option>All</option>
-          {termOptions.map((term) => (
-            <option key={term} value={term}>
-              {presentTerm(term)}
-            </option>
-          ))}
-        </select>
+          value={term}
+        />
 
         <AmountFilter
           onChange={onChangeInitialDeposit}

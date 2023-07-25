@@ -18,7 +18,10 @@ interface IPageProps {
   offers: Offer[];
 }
 
-export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
+export default function UsDollarNoticeSavingsAccountsPage({
+  noticePeriodOptions,
+  offers,
+}: IPageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 

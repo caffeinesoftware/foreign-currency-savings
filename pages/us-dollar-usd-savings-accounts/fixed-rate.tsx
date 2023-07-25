@@ -18,7 +18,10 @@ interface IPageProps {
   termOptions: number[];
 }
 
-export default function Currency({ offers, termOptions }: IPageProps) {
+export default function UsDollarFixedRateSavingsAccountsPage({
+  offers,
+  termOptions,
+}: IPageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 

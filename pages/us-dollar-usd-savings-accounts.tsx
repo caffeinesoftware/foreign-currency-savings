@@ -15,7 +15,7 @@ interface IPageProps {
   offers: Offer[];
 }
 
-export default function Currency({ offers }: IPageProps) {
+export default function UsDollarUsdSavingsAccountsPage({ offers }: IPageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 

@@ -70,10 +70,11 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
       <Link href={offer.account.url}>
         <Image
           src={offer.account.marketingInstitution.logoImage}
-          alt={offer.account.marketingInstitution.name}
           width={100}
           height={50}
           className="inline-block"
+          alt={offer.account.marketingInstitution.name + " logo"}
+          title={offer.account.marketingInstitution.name}
           style={{ marginRight: "0.5em" }}
         />
         <h2 className="font-bold inline-block text-lg">

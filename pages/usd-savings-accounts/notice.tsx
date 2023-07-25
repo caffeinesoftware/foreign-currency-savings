@@ -1,16 +1,17 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 import { getOffersByAccountTypeAndCurrency, Offer } from "@/src/offers";
 import { AccountType } from "@/src/accounts";
-import OfferBox from "@/src/components/OfferBox";
 import Layout from "./../layout";
 import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
-import { presentTerm } from "@/src/utils";
 import OfferList from "@/src/components/OfferList";
 import AmountFilter from "@/src/components/AmountFilter";
 import TermFilter from "@/src/components/TermFilter";
+import { dropBlankValues } from "@/src/utils";
 
 interface IPageProps {
   noticePeriodOptions: number[];
@@ -18,8 +19,30 @@ interface IPageProps {
 }
 
 export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const initialDepositFromQueryString = searchParams?.get("initial_deposit");
+  const noticePeriodFromQueryString = searchParams?.get("notice_period");
+
   const [noticePeriod, setNoticePeriod] = useState<number | null>(null);
   const [initialDeposit, setInitialDeposit] = useState<number | null>(null);
+
+  useEffect(() => {
+    setInitialDeposit(
+      initialDepositFromQueryString
+        ? parseInt(initialDepositFromQueryString)
+        : null,
+    );
+  }, [initialDepositFromQueryString]);
+
+  useEffect(() => {
+    setNoticePeriod(
+      noticePeriodFromQueryString
+        ? parseInt(noticePeriodFromQueryString)
+        : null,
+    );
+  }, [noticePeriodFromQueryString]);
 
   const filteredOffers = offers
     .filter((offer) => {
@@ -35,13 +58,25 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
   const onChangeNoticePeriod = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
-    setNoticePeriod(parseInt(event.target.value));
+    const notice_period =
+      event.target.value === "All" ? null : event.target.value;
+
+    router.push({
+      pathname: router.pathname,
+      query: dropBlankValues({ ...router.query, notice_period }),
+    });
   };
 
   const onChangeInitialDeposit = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    setInitialDeposit(parseInt(event.target.value));
+    router.push({
+      pathname: router.pathname,
+      query: dropBlankValues({
+        ...router.query,
+        initial_deposit: event.target.value,
+      }),
+    });
   };
 
   return (

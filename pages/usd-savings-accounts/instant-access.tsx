@@ -1,23 +1,35 @@
 import { GetStaticProps } from "next";
-import Link from "next/link";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 import { getOffersByAccountTypeAndCurrency, Offer } from "@/src/offers";
 import { AccountType } from "@/src/accounts";
-import OfferBox from "@/src/components/OfferBox";
 import Layout from "./../layout";
 import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
 import OfferList from "@/src/components/OfferList";
+import { dropBlankValues } from "@/src/utils";
 
 interface IPageProps {
   offers: Offer[];
 }
 
 export default function Currency({ offers }: IPageProps) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const initialDepositFromQueryString = searchParams?.get("initial_deposit");
+
   const [initialDeposit, setInitialDeposit] = useState<number | null>(null);
 
-  console.log({ initialDeposit });
+  useEffect(() => {
+    setInitialDeposit(
+      initialDepositFromQueryString
+        ? parseInt(initialDepositFromQueryString)
+        : null,
+    );
+  }, [initialDepositFromQueryString]);
 
   const filteredOffers = offers.filter((offer) => {
     if (!initialDeposit) return offer;
@@ -28,7 +40,13 @@ export default function Currency({ offers }: IPageProps) {
   const onChangeInitialDeposit = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    setInitialDeposit(parseInt(event.target.value));
+    router.push({
+      pathname: router.pathname,
+      query: dropBlankValues({
+        ...router.query,
+        initial_deposit: event.target.value,
+      }),
+    });
   };
 
   return (

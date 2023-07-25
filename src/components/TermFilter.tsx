@@ -24,7 +24,7 @@ const TermFilter = ({
       value={value || ""}
       onChange={onChange}
     >
-      <option>All</option>
+      <option value={undefined}>All</option>
       {availableTerms.map((term) => (
         <option key={term} value={term}>
           {presentTerm(term)}

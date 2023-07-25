@@ -21,7 +21,7 @@ export default function Currency({ offers }: IPageProps) {
 
   const initialDepositFromQueryString = searchParams?.get("initial_deposit");
 
-  const [initialDeposit, setInitialDeposit] = useState<number | null>();
+  const [initialDeposit, setInitialDeposit] = useState<number | null>(null);
 
   useEffect(() => {
     setInitialDeposit(

@@ -10,7 +10,10 @@ export default function IndexPage() {
     <Layout>
       <Head>
         <title>Foreign Currency Savings</title>
-        <meta name="description" content="Compare foreign currency savings accounts available for UK residents, including instant access, notice and fixed rate accounts" />
+        <meta
+          name="description"
+          content="Compare foreign currency savings accounts available for UK residents, including instant access, notice and fixed rate accounts"
+        />
       </Head>
       <div className="width-full bg-green-600 p-3 text-white">
         <h2 className="font-bold text-3xl text-center py-3">

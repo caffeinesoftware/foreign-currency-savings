@@ -25,7 +25,9 @@ const USDAccountTypesMenu = () => {
       </Link>
       <Link
         href="/us-dollar-usd-savings-accounts/instant-access"
-        className={classesForLink("/us-dollar-usd-savings-accounts/instant-access")}
+        className={classesForLink(
+          "/us-dollar-usd-savings-accounts/instant-access",
+        )}
       >
         Instant access
       </Link>

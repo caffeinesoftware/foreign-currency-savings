@@ -53,11 +53,15 @@ export default function Currency({ offers }: IPageProps) {
     <Layout>
       <Head>
         <title>🇺🇸 US Dollar (USD) instant access savings accounts</title>
-        <meta name="description" content="Compare US Dollar (USD) instant access savings accounts available for UK residents" />
+        <meta
+          name="description"
+          content="Compare US Dollar (USD) instant access savings accounts available for UK residents"
+        />
       </Head>
       <div className="width-full bg-green-600 p-3">
         <h2 className="text-white font-bold text-3xl text-center py-3">
-          US Dollar (USD) instant access savings accounts available to UK residents
+          US Dollar (USD) instant access savings accounts available to UK
+          residents
         </h2>
       </div>
       <USDAccountTypesMenu />

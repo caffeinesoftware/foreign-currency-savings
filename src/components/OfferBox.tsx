@@ -5,7 +5,7 @@ import Linkify from "linkify-react";
 import { Offer } from "../offers";
 import infoIcon from "./../../public/info-icon.svg";
 import { AccountType } from "../accounts";
-import { presentTerm } from "../utils";
+import { presentAccountType, presentTerm } from "../utils";
 
 const getAmountDescription = (offer: Offer): string => {
   if (
@@ -49,22 +49,13 @@ const formatCurrency = (amount: number, currencyCode: string): string => {
   return formatter.format(amount);
 };
 
-const presentAccountType = (offer: Offer): string => {
-  switch (offer.account.accountType) {
-    case AccountType.INSTANT_ACCESS:
-      return "Instant access";
-    case AccountType.FIXED_TERM:
-      return (
-        presentTerm(offer.interestRate.termInDays as number) + " fixed term"
-      );
-    case AccountType.NOTICE:
-      return `${offer.interestRate.termInDays} days notice`;
-    default:
-      throw "Unrecognised account type";
-  }
-};
-
-const OfferBox = ({ offer }: { offer: Offer }) => (
+const OfferBox = ({
+  offer,
+  showLearnMoreLink,
+}: {
+  offer: Offer;
+  showLearnMoreLink: boolean;
+}) => (
   <div className="min-w-full bg-white rounded py-4 px-3 my-5 shadow-sm">
     <div className="mb-3 p-3">
       <Link href={offer.account.url}>
@@ -192,11 +183,13 @@ const OfferBox = ({ offer }: { offer: Offer }) => (
         </Linkify>
       </div>
 
-      <Link href={offer.account.url}>
-        <div className="rounded bg-green-600 text-white p-2 my-3 inline-block float-right">
-          Learn more
-        </div>
-      </Link>
+      {showLearnMoreLink && (
+        <Link href={`/us-dollar-usd-savings-accounts/${offer.slug}`}>
+          <div className="rounded bg-green-600 text-white p-2 my-3 inline-block float-right">
+            Learn more
+          </div>
+        </Link>
+      )}
       <div className="clear-both"></div>
     </div>
   </div>

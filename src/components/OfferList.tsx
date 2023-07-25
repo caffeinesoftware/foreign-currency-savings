@@ -16,7 +16,7 @@ const OfferList = ({
     </p>
 
     {offers.map((offer) => (
-      <OfferBox offer={offer} key={offer.key} />
+      <OfferBox offer={offer} key={offer.slug} showLearnMoreLink={true} />
     ))}
 
     <p className="text-center text-md mt-1 text-gray-600">

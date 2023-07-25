@@ -10,6 +10,10 @@ export default function IndexPage() {
     <Layout>
       <Head>
         <title>Foreign Currency Savings</title>
+        <meta
+          name="description"
+          content="Compare foreign currency savings accounts available for UK residents, including instant access, notice and fixed rate accounts"
+        />
       </Head>
       <div className="width-full bg-green-600 p-3 text-white">
         <h2 className="font-bold text-3xl text-center py-3">
@@ -18,11 +22,11 @@ export default function IndexPage() {
 
         <p className="text-white md:text-center">
           We compare the best foreign currency savings accounts available to UK
-          residents, including US Dollar (USD) and Euro (EUR) accounts.
+          residents, including instant access, notice and fixed rate accounts.
         </p>
       </div>
       <div className="width-full bg-white text-black p-3 py-5 mb-10">
-        <Link href="/usd-savings-accounts">
+        <Link href="/us-dollar-usd-savings-accounts">
           <Image
             src={usaFlag}
             alt="USA flag"

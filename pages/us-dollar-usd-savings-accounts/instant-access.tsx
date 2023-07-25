@@ -9,23 +9,20 @@ import { AccountType } from "@/src/accounts";
 import Layout from "./../layout";
 import USDAccountTypesMenu from "@/src/components/USDAccountTypesMenu";
 import OfferList from "@/src/components/OfferList";
-import AmountFilter from "@/src/components/AmountFilter";
-import TermFilter from "@/src/components/TermFilter";
 import { dropBlankValues } from "@/src/utils";
 
 interface IPageProps {
-  noticePeriodOptions: number[];
   offers: Offer[];
 }
 
-export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
+export default function UsDollarInstantAccessSavingsAccountsPage({
+  offers,
+}: IPageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
   const initialDepositFromQueryString = searchParams?.get("initial_deposit");
-  const noticePeriodFromQueryString = searchParams?.get("notice_period");
 
-  const [noticePeriod, setNoticePeriod] = useState<number | null>(null);
   const [initialDeposit, setInitialDeposit] = useState<number | null>(null);
 
   useEffect(() => {
@@ -36,36 +33,11 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
     );
   }, [initialDepositFromQueryString]);
 
-  useEffect(() => {
-    setNoticePeriod(
-      noticePeriodFromQueryString
-        ? parseInt(noticePeriodFromQueryString)
-        : null,
-    );
-  }, [noticePeriodFromQueryString]);
-
-  const filteredOffers = offers
-    .filter((offer) => {
-      if (!noticePeriod) return offer;
-      const noticePeriodInDays = offer.interestRate.termInDays as number;
-      return noticePeriodInDays === noticePeriod;
-    })
-    .filter((offer) => {
-      if (!initialDeposit) return offer;
-      return offer.interestRate.minimumDepositAmount <= initialDeposit;
-    });
-
-  const onChangeNoticePeriod = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
-    const notice_period =
-      event.target.value === "All" ? null : event.target.value;
-
-    router.push({
-      pathname: router.pathname,
-      query: dropBlankValues({ ...router.query, notice_period }),
-    });
-  };
+  const filteredOffers = offers.filter((offer) => {
+    if (!initialDeposit) return offer;
+    console.log(offer.interestRate.minimumDepositAmount <= initialDeposit);
+    return offer.interestRate.minimumDepositAmount <= initialDeposit;
+  });
 
   const onChangeInitialDeposit = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -79,14 +51,25 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
     });
   };
 
+  const topOffer = offers[0];
+
   return (
     <Layout>
       <Head>
-        <title>US Dollar notice savings accounts 🇺🇸</title>
+        <title>🇺🇸 US Dollar (USD) instant access savings accounts</title>
+        <meta
+          name="description"
+          content={`Compare US Dollar (USD) instant access savings accounts available for UK residents. Right now, our top offer is from ${
+            topOffer.account.marketingInstitution.name
+          } with an interest rate of ${topOffer.interestRate.grossAnnualRatePercentage.toFixed(
+            2,
+          )}% AER.`}
+        />
       </Head>
       <div className="width-full bg-green-600 p-3">
         <h2 className="text-white font-bold text-3xl text-center py-3">
-          US Dollar notice savings accounts available to UK residents 🇺🇸
+          US Dollar (USD) instant access savings accounts available to UK
+          residents
         </h2>
       </div>
       <USDAccountTypesMenu />
@@ -95,22 +78,33 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
           Filters
         </h3>
 
-        <TermFilter
-          availableTerms={noticePeriodOptions}
-          label="Notice"
-          name="noticePeriod"
-          onChange={onChangeNoticePeriod}
-          value={noticePeriod}
-        />
+        <label
+          htmlFor="initialDeposit"
+          className="text-white my-2 block md:ml-4"
+        >
+          Amount
+        </label>
 
-        <AmountFilter
+        <input
+          name="initialDeposit"
+          className="block my-2 w-full text-lg ld:float-left md:ml-4 md:grow pl-5"
           onChange={onChangeInitialDeposit}
-          value={initialDeposit}
+          type="number"
+          min="1"
+          step="1"
+          placeholder="Any"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='85px'><text x='2' y='13' fill='gray' font-size='12' font-family='arial'>$</text></svg>",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "5px 2px",
+            backgroundSize: "auto 75%",
+          }}
         />
 
         <div className="clear-both"></div>
       </div>
-      <div className="container p-6 mx-auto">
+      <div className="container p-5 mx-auto">
         <div className="container p-6 mx-auto">
           <OfferList offers={filteredOffers} totalCount={offers.length} />
           <div style={{ height: "200px" }}>&nbsp;</div>
@@ -121,14 +115,10 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const offers = getOffersByAccountTypeAndCurrency(AccountType.NOTICE, "USD");
-
-  const noticePeriodsInDays = offers.map(
-    (offer) => offer.interestRate.termInDays,
-  ) as number[];
-  const noticePeriodOptions = [...new Set(noticePeriodsInDays)].sort(
-    (a, b) => a - b,
+  const offers = getOffersByAccountTypeAndCurrency(
+    AccountType.INSTANT_ACCESS,
+    "USD",
   );
 
-  return { props: { noticePeriodOptions, offers } };
+  return { props: { offers } };
 };

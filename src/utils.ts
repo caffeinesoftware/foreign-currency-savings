@@ -1,3 +1,6 @@
+import { AccountType } from "./accounts";
+import { Offer } from "./offers";
+
 export const sortBy = <T>(arr: T[], callback: (item: T) => any): T[] => {
   return arr.sort((a, b) => {
     const aVal = callback(a);
@@ -34,4 +37,26 @@ export const dropBlankValues = (obj: {
       ([_, v]) => v != null && v != undefined && v != "",
     ),
   );
+};
+
+export const slugify = (str: string): string => {
+  return str
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+};
+
+export const presentAccountType = (offer: Offer): string => {
+  switch (offer.account.accountType) {
+    case AccountType.INSTANT_ACCESS:
+      return "Instant access";
+    case AccountType.FIXED_TERM:
+      return (
+        presentTerm(offer.interestRate.termInDays as number) + " fixed term"
+      );
+    case AccountType.NOTICE:
+      return `${offer.interestRate.termInDays} days notice`;
+    default:
+      throw "Unrecognised account type";
+  }
 };

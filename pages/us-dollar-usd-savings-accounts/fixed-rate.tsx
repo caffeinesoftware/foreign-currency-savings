@@ -18,7 +18,10 @@ interface IPageProps {
   termOptions: number[];
 }
 
-export default function Currency({ offers, termOptions }: IPageProps) {
+export default function UsDollarFixedRateSavingsAccountsPage({
+  offers,
+  termOptions,
+}: IPageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -72,14 +75,28 @@ export default function Currency({ offers, termOptions }: IPageProps) {
     });
   };
 
+  const topOffer = offers.filter(
+    (offer) => offer.interestRate.termInDays === 365,
+  )[0];
+
   return (
     <Layout>
       <Head>
-        <title>US Dollar fixed rate savings accounts 🇺🇸</title>
+        <title>🇺🇸 US Dollar (USD) fixed rate savings accounts </title>
+        <meta
+          name="description"
+          content={`Compare ${
+            offers.length
+          } US Dollar (USD) fixed rate savings accounts available for UK residents. Right now, our top offer is a 1 year fixed rate from ${
+            topOffer.account.marketingInstitution.name
+          } with an interest rate of ${topOffer.interestRate.grossAnnualRatePercentage.toFixed(
+            2,
+          )}% AER.`}
+        />
       </Head>
       <div className="width-full bg-green-600 p-3">
         <h2 className="text-white font-bold text-3xl text-center py-3">
-          US Dollar fixed rate savings accounts available to UK residents 🇺🇸
+          US Dollar (USD) fixed rate savings accounts available to UK residents
         </h2>
       </div>
       <USDAccountTypesMenu />

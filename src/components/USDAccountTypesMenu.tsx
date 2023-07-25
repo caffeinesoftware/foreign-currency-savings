@@ -18,26 +18,28 @@ const USDAccountTypesMenu = () => {
   return (
     <div className="width-full bg-green-500 md:columns-4 text-center text-white gap-0">
       <Link
-        href="/usd-savings-accounts"
-        className={classesForLink("/usd-savings-accounts")}
+        href="/us-dollar-usd-savings-accounts"
+        className={classesForLink("/us-dollar-usd-savings-accounts")}
       >
         All
       </Link>
       <Link
-        href="/usd-savings-accounts/instant-access"
-        className={classesForLink("/usd-savings-accounts/instant-access")}
+        href="/us-dollar-usd-savings-accounts/instant-access"
+        className={classesForLink(
+          "/us-dollar-usd-savings-accounts/instant-access",
+        )}
       >
         Instant access
       </Link>
       <Link
-        href="/usd-savings-accounts/notice"
-        className={classesForLink("/usd-savings-accounts/notice")}
+        href="/us-dollar-usd-savings-accounts/notice"
+        className={classesForLink("/us-dollar-usd-savings-accounts/notice")}
       >
         Notice
       </Link>
       <Link
-        href="/usd-savings-accounts/fixed-rate"
-        className={classesForLink("/usd-savings-accounts/fixed-rate")}
+        href="/us-dollar-usd-savings-accounts/fixed-rate"
+        className={classesForLink("/us-dollar-usd-savings-accounts/fixed-rate")}
       >
         Fixed rate
       </Link>

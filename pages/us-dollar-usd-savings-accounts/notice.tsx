@@ -79,13 +79,23 @@ export default function Currency({ noticePeriodOptions, offers }: IPageProps) {
     });
   };
 
+  const topOffer = offers.filter(
+    (offer) => offer.interestRate.termInDays === 40,
+  )[0];
+
   return (
     <Layout>
       <Head>
         <title>🇺🇸 US Dollar (USD) notice savings accounts</title>
         <meta
           name="description"
-          content="Compare US Dollar (USD) notice savings accounts available for UK residents"
+          content={`Compare ${
+            offers.length
+          } US Dollar (USD) notice savings accounts available for UK residents. Right now, our top offer is a 40 day notice account from ${
+            topOffer.account.marketingInstitution.name
+          } with an interest rate of ${topOffer.interestRate.grossAnnualRatePercentage.toFixed(
+            2,
+          )}% AER.`}
         />
       </Head>
       <div className="width-full bg-green-600 p-3">

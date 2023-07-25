@@ -49,13 +49,19 @@ export default function Currency({ offers }: IPageProps) {
     });
   };
 
+  const topOffer = offers[0];
+
   return (
     <Layout>
       <Head>
         <title>🇺🇸 US Dollar (USD) instant access savings accounts</title>
         <meta
           name="description"
-          content="Compare US Dollar (USD) instant access savings accounts available for UK residents"
+          content={`Compare US Dollar (USD) instant access savings accounts available for UK residents. Right now, our top offer is from ${
+            topOffer.account.marketingInstitution.name
+          } with an interest rate of ${topOffer.interestRate.grossAnnualRatePercentage.toFixed(
+            2,
+          )}% AER.`}
         />
       </Head>
       <div className="width-full bg-green-600 p-3">

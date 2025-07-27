@@ -12,6 +12,7 @@ export interface Account {
   interestRates: InterestRate[];
   notesText: string | null;
   url: string;
+  updatedAt: string;
 }
 
 export interface InterestRate {
@@ -49,6 +50,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.expat.hsbc.com/savings-accounts/products/saver-account",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Advance Quarterly Bonus Saver",
@@ -67,6 +69,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.95%, up to 3.38% with bonus. Earn bonus interest every 3 months when you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Premier Quarterly Bonus Saver",
@@ -85,6 +88,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.95%, up to 3.38% with bonus. Earn bonus interest every 3 months when you don't make a withdrawal. Premier customers qualify for preferential rates.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Advance Online Bonus Saver",
@@ -103,6 +107,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.85%, up to 2.48% with bonus. Earn bonus interest for any calendar month where you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Premier Online Bonus Saver",
@@ -121,6 +126,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.85%, up to 2.48% with bonus. Earn bonus interest for any calendar month where you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Savings Booster",
@@ -174,6 +180,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.expat.hsbc.com/savings-accounts/products/fixed-term-deposit/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Premier Fixed Term Deposit",
@@ -233,6 +240,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.expat.hsbc.com/savings-accounts/products/fixed-term-deposit/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Easy Access USD Standard",
@@ -250,6 +258,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.revolut.com/meet-your-financial-goals-with-vaults/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Easy Access USD Plus",
@@ -268,6 +277,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Only available to Revolut Plus plan subscribers. Revolut Plus costs £2.99 per month.",
     url: "https://www.revolut.com/meet-your-financial-goals-with-vaults/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Easy Access USD Premium",
@@ -286,6 +296,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Only available to Revolut Premium plan subscribers. Revolut Premium costs £6.99 per month.",
     url: "https://www.revolut.com/meet-your-financial-goals-with-vaults/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Easy Access USD Metal",
@@ -304,6 +315,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Only available to Revolut Metal plan subscribers. Revolut Metal costs £12.99 per month.",
     url: "https://www.revolut.com/meet-your-financial-goals-with-vaults/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Easy Access USD Ultra",
@@ -322,6 +334,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Only available to Revolut Ultra plan subscribers. Revolut Metal costs £55 per month.",
     url: "https://www.revolut.com/meet-your-financial-goals-with-vaults/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Interest",
@@ -340,6 +353,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Money is kept in a fund holding government-backed short-term loans. For more information, see https://wise.com/help/articles/GDxZxemd21yDVP4TQmdDJ/using-wise-interest.",
     url: "https://wise.com/gb/interest/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "USD Personal Access",
@@ -357,6 +371,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/access/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "USD Personal 40",
@@ -374,6 +389,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/40day/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "USD Personal 120",
@@ -391,6 +407,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/120day/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "90 Day Notice Account",
@@ -408,6 +425,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.moneycorpbank.com/saving-account/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Notice Account",
@@ -443,6 +461,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.santanderinternational.co.uk/international/products/savings/notice-account/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Deposit Contract",
@@ -490,6 +509,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.santanderinternational.co.uk/international/products/savings/fixed-deposit-contract/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Term Deposit",
@@ -585,6 +605,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.lloydsbank.com/international/products-and-services/saving-accounts/fixed-term-deposits.html#dollar",
+    updatedAt: "2024-01-01",
   },
   {
     name: "International Instant Saver Account",
@@ -614,6 +635,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.lloydsbank.com/international/products-and-services/saving-accounts/international-instant-saver-account.html",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Savings Account",
@@ -631,6 +653,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.hkbea.co.uk/html/en/beauk-personal-banking-savings-account.html",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Call Deposit Account",
@@ -648,6 +671,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.hkbea.co.uk/html/en/beauk-personal-banking-call-deposit-account.html",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Term Deposit Account",
@@ -689,6 +713,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.hkbea.co.uk/html/en/beauk-rates-usd-fixed-deposit-rates.html",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Deposit Account",
@@ -748,6 +773,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.pnbint.com/PNBIL/FixedDeposit/Fixed-Deposit#",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Deposit",
@@ -795,6 +821,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://sbiuk.statebank/fixed-deposits",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Deposit",
@@ -836,6 +863,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.unionbankofindiauk.co.uk/personal-banking/term-deposits",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Savings Account",
@@ -853,6 +881,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.unionbankofindiauk.co.uk/personal-banking/term-deposits",
+    updatedAt: "2024-01-01",
   },
   {
     name: "Fixed Term Deposit",
@@ -888,6 +917,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.ubluk.com/personal-banking/products-and-services/personal-savings-accounts/fixed-term-deposits/",
+    updatedAt: "2024-01-01",
   },
   {
     name: "All-in-One Fixed Term Deposit Personal Account",
@@ -906,6 +936,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.bankofchina.com/uk/pbservice/pb1/201410/t20141026_4052976.html",
+    updatedAt: "2024-01-01",
   },
 ];
 

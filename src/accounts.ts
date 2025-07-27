@@ -365,14 +365,14 @@ const ACCOUNTS: Account[] = [
     interestRates: [
       {
         minimumDepositAmount: 25_000,
-        maximumDepositAmount: 5_000_000,
-        grossAnnualRatePercentage: 4.25,
+        maximumDepositAmount: 1_000_000,
+        grossAnnualRatePercentage: 3.75,
         termInDays: null,
       },
     ],
     notesText: null,
     url: "https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/access/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "USD Personal 40",
@@ -384,13 +384,13 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 25_000,
         maximumDepositAmount: 5_000_000,
-        grossAnnualRatePercentage: 4.5,
+        grossAnnualRatePercentage: 4.0,
         termInDays: 40,
       },
     ],
     notesText: null,
     url: "https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/40day/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "USD Personal 120",
@@ -402,13 +402,13 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 25_000,
         maximumDepositAmount: 5_000_000,
-        grossAnnualRatePercentage: 4.75,
+        grossAnnualRatePercentage: 4.25,
         termInDays: 120,
       },
     ],
     notesText: null,
     url: "https://www.skiptoninternational.com/offshore-savings-accounts/us-dollar/120day/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "90 Day Notice Account",

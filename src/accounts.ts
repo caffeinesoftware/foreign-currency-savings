@@ -931,13 +931,14 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 3_500,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 5.4,
+        grossAnnualRatePercentage: 2.5,
         termInDays: 365,
       },
     ],
-    notesText: null,
+    notesText:
+      "Rate reduced following PBOC guidance to Chinese banks to cut USD deposit rates. Current rate information difficult to verify as bank's USD rate documentation is not easily accessible online.",
     url: "https://www.bankofchina.com/uk/pbservice/pb1/201410/t20141026_4052976.html",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
 ];
 

@@ -43,7 +43,7 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 1.1,
+        grossAnnualRatePercentage: 0.9,
         termInDays: null,
       },
     ],
@@ -60,11 +60,12 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 2.81,
+        grossAnnualRatePercentage: 3.38,
         termInDays: null,
       },
     ],
-    notesText: null,
+    notesText:
+      "Standard rate 0.95%, up to 3.38% with bonus. Earn bonus interest every 3 months when you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/",
   },
   {
@@ -77,11 +78,12 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 2.81,
+        grossAnnualRatePercentage: 3.38,
         termInDays: null,
       },
     ],
-    notesText: null,
+    notesText:
+      "Standard rate 0.95%, up to 3.38% with bonus. Earn bonus interest every 3 months when you don't make a withdrawal. Premier customers qualify for preferential rates.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/",
   },
   {
@@ -94,11 +96,12 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 2.91,
+        grossAnnualRatePercentage: 2.48,
         termInDays: null,
       },
     ],
-    notesText: null,
+    notesText:
+      "Standard rate 0.85%, up to 2.48% with bonus. Earn bonus interest for any calendar month where you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/",
   },
   {
@@ -111,12 +114,31 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 2.96,
+        grossAnnualRatePercentage: 2.48,
         termInDays: null,
       },
     ],
-    notesText: null,
+    notesText:
+      "Standard rate 0.85%, up to 2.48% with bonus. Earn bonus interest for any calendar month where you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/",
+  },
+  {
+    name: "Savings Booster",
+    institutionSlug: "hsbc-expat",
+    marketingInstitutionSlug: "hsbc-expat",
+    currencyCode: "USD",
+    accountType: AccountType.FIXED_TERM,
+    interestRates: [
+      {
+        minimumDepositAmount: 25000,
+        maximumDepositAmount: null,
+        grossAnnualRatePercentage: 4.3,
+        termInDays: 183,
+      },
+    ],
+    notesText:
+      "Limited time offer available until 31 July 2025. 6-month fixed term. Deposits must be new money from a non-HSBC Expat account.",
+    url: "https://www.expat.hsbc.com/savings-accounts/products/booster/",
   },
   {
     name: "Advance Fixed Term Deposit",
@@ -128,25 +150,25 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 3.61,
+        grossAnnualRatePercentage: 3.03,
         termInDays: 30,
       },
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.47,
+        grossAnnualRatePercentage: 3.52,
         termInDays: 90,
       },
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.53,
+        grossAnnualRatePercentage: 3.81,
         termInDays: 180,
       },
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.78,
+        grossAnnualRatePercentage: 3.63,
         termInDays: 365,
       },
     ],
@@ -163,49 +185,49 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: 49_999,
-        grossAnnualRatePercentage: 3.61,
+        grossAnnualRatePercentage: 2.78,
         termInDays: 30,
       },
       {
         minimumDepositAmount: 50000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 3.66,
+        grossAnnualRatePercentage: 3.03,
         termInDays: 30,
       },
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: 49_999,
-        grossAnnualRatePercentage: 4.47,
+        grossAnnualRatePercentage: 3.27,
         termInDays: 90,
       },
       {
         minimumDepositAmount: 50_000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.51,
+        grossAnnualRatePercentage: 3.52,
         termInDays: 90,
       },
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: 49_999,
-        grossAnnualRatePercentage: 4.53,
+        grossAnnualRatePercentage: 3.56,
         termInDays: 180,
       },
       {
         minimumDepositAmount: 50_000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.58,
+        grossAnnualRatePercentage: 3.81,
         termInDays: 180,
       },
       {
         minimumDepositAmount: 5000,
         maximumDepositAmount: 49_999,
-        grossAnnualRatePercentage: 4.78,
+        grossAnnualRatePercentage: 3.38,
         termInDays: 365,
       },
       {
         minimumDepositAmount: 50_000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.83,
+        grossAnnualRatePercentage: 3.63,
         termInDays: 365,
       },
     ],

@@ -50,7 +50,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.expat.hsbc.com/savings-accounts/products/saver-account",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Advance Quarterly Bonus Saver",
@@ -69,7 +69,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.95%, up to 3.38% with bonus. Earn bonus interest every 3 months when you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Premier Quarterly Bonus Saver",
@@ -88,7 +88,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.95%, up to 3.38% with bonus. Earn bonus interest every 3 months when you don't make a withdrawal. Premier customers qualify for preferential rates.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/quarterly-bonus-saver/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Advance Online Bonus Saver",
@@ -107,7 +107,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.85%, up to 2.48% with bonus. Earn bonus interest for any calendar month where you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Premier Online Bonus Saver",
@@ -126,7 +126,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Standard rate 0.85%, up to 2.48% with bonus. Earn bonus interest for any calendar month where you don't make a withdrawal.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/online-bonus-saver/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Savings Booster",
@@ -145,6 +145,7 @@ const ACCOUNTS: Account[] = [
     notesText:
       "Limited time offer available until 31 July 2025. 6-month fixed term. Deposits must be new money from a non-HSBC Expat account.",
     url: "https://www.expat.hsbc.com/savings-accounts/products/booster/",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Advance Fixed Term Deposit",
@@ -180,7 +181,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.expat.hsbc.com/savings-accounts/products/fixed-term-deposit/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Premier Fixed Term Deposit",
@@ -240,7 +241,7 @@ const ACCOUNTS: Account[] = [
     ],
     notesText: null,
     url: "https://www.expat.hsbc.com/savings-accounts/products/fixed-term-deposit/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Easy Access USD Standard",

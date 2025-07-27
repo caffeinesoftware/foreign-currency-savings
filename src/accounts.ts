@@ -342,7 +342,7 @@ const ACCOUNTS: Account[] = [
     interestRates: [
       {
         minimumDepositAmount: 25_000,
-        maximumDepositAmount: 5_000_000,
+        maximumDepositAmount: 1_000_000,
         grossAnnualRatePercentage: 3.75,
         termInDays: null,
       },

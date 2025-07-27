@@ -183,6 +183,11 @@ const OfferBox = ({
         </Linkify>
       </div>
 
+      <div className="my-3 py-2 inline-block float-left text-gray-500">
+        Last updated{" "}
+        {new Date(offer.account.updatedAt).toLocaleDateString("en-GB")}
+      </div>
+
       {showLearnMoreLink && (
         <Link href={`/us-dollar-usd-savings-accounts/${offer.slug}`}>
           <div className="rounded bg-green-600 text-white p-2 my-3 inline-block float-right">

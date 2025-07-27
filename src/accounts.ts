@@ -420,13 +420,13 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 100_000,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.5,
+        grossAnnualRatePercentage: 4.4,
         termInDays: 90,
       },
     ],
     notesText: null,
     url: "https://www.moneycorpbank.com/saving-account/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-07-27",
   },
   {
     name: "Notice Account",

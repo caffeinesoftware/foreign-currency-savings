@@ -329,7 +329,7 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 25_000,
         maximumDepositAmount: 5_000_000,
-        grossAnnualRatePercentage: 4.25,
+        grossAnnualRatePercentage: 3.75,
         termInDays: null,
       },
     ],
@@ -346,7 +346,7 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 25_000,
         maximumDepositAmount: 5_000_000,
-        grossAnnualRatePercentage: 4.5,
+        grossAnnualRatePercentage: 4.0,
         termInDays: 40,
       },
     ],
@@ -363,7 +363,7 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 25_000,
         maximumDepositAmount: 5_000_000,
-        grossAnnualRatePercentage: 4.75,
+        grossAnnualRatePercentage: 4.25,
         termInDays: 120,
       },
     ],

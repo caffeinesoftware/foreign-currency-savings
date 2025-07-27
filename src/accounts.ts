@@ -347,14 +347,14 @@ const ACCOUNTS: Account[] = [
       {
         minimumDepositAmount: 1,
         maximumDepositAmount: null,
-        grossAnnualRatePercentage: 4.99,
+        grossAnnualRatePercentage: 4.07,
         termInDays: null,
       },
     ],
     notesText:
       "Money is kept in a fund holding government-backed short-term loans. For more information, see https://wise.com/help/articles/GDxZxemd21yDVP4TQmdDJ/using-wise-interest.",
     url: "https://wise.com/gb/interest/",
-    updatedAt: "2024-01-01",
+    updatedAt: "2025-01-27",
   },
   {
     name: "USD Personal Access",
